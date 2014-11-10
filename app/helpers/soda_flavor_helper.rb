@@ -1,0 +1,2 @@
+module SodaFlavorHelper
+end

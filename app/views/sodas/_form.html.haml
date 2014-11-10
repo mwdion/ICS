@@ -1,0 +1,23 @@
+= form_for @soda do |f|
+  = f.text_field :order_name, class: 'form-control focusedInput', placeholder: "Type Order Name Here..."
+  = "Floats $6"
+  = f.select :price, options_for_select(["6"] ), {}, { class: 'form-control form-control' }
+  = "Select Soda Flavor"
+  = f.select :float_flavor, options_for_select(["Select One",'Root Beer', 'Orange Soda', 'Ginger Ale'] ), {}, { class: 'form-control form-control' }
+  = "Select as Many Scoops of Ice Cream You Would Like"
+  %br
+  - @flavors.all.each do |flavor|
+    = check_box_tag 'soda[flavor_ids][]', flavor.id, @soda.flavors.include?(flavor) 
+    %p3= flavor.name
+    %br
+  = "Discount Present?"
+  %br
+  = f.label "Yes"
+  = f.radio_button :discount, "Yes"
+  = f.label "No"
+  = f.radio_button :discount, "No"
+  =f.submit "Purchase", class: 'btn btn-success btn-block'
+
+
+
+

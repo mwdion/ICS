@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ice_cream_flavor_id: 1
+  soda_flavor_id: 1
+  price: 1
+  discount: MyString
+  order_name: MyString
+
+two:
+  ice_cream_flavor_id: 1
+  soda_flavor_id: 1
+  price: 1
+  discount: MyString
+  order_name: MyString

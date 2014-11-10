@@ -1,0 +1,7 @@
+%h1 Milkshake Order Index
+- @milkshakes.each do |milkshake|
+  = link_to "#{milkshake.order_name}", milkshake_path(milkshake)
+  = link_to "Edit", edit_milkshake_path(milkshake), class: 'btn btn-xs btn-warning'
+  = link_to "Delete", milkshake_path(milkshake), method: :delete, class: 'btn btn-xs btn-danger'
+  %br
+= link_to "Home", root_path, class: 'btn btn-success btn-lg btn-block'

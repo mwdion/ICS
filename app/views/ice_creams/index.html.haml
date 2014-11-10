@@ -1,0 +1,7 @@
+%h1 Ice Cream Orders
+- @ice_cream.each do |ice_cream|
+  = link_to "#{ice_cream.order_name}", ice_cream_path(ice_cream)
+  = link_to "Edit", edit_ice_cream_path(ice_cream), class: 'btn btn-xs btn-warning'
+  = link_to "Delete", ice_cream_path(ice_cream), method: :delete, class: 'btn btn-xs btn-danger'
+  %br
+= link_to "Home", root_path, class: 'btn btn-success btn-lg btn-block'

@@ -1,0 +1,16 @@
+= form_for @ice_cream do |f|
+  = f.text_field :order_name, class: 'form-control focusedInput', placeholder: "Type Order Name Here..."
+  = "Cup or Waffle Cone?"
+  = f.select :vessel, options_for_select(["Select One",'Cup', 'Waffle Cone'] ), {}, { class: 'form-control form-control' }
+  = "One Scoop ($4) or Two Scoops ($6)"
+  = f.select :price, options_for_select(["Select One",'4', '6'] ), {}, { class: 'form-control form-control' }
+  = "Select Ice Cream Flavor"
+  %br
+  - @flavors.all.each do |flavor|
+    = check_box_tag 'ice_cream[flavor_ids][]', flavor.id, @ice_cream.flavors.include?(flavor) 
+    %p3= flavor.name
+    %br
+  =f.submit "Purchase", class: 'btn btn-success btn-block'
+
+
+

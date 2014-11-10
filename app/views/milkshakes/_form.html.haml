@@ -1,0 +1,19 @@
+= form_for @milkshake do |f|
+  = f.text_field :order_name, class: 'form-control focusedInput', placeholder: "Type Order Name Here..."
+  = "Select Milk Preference (2%, Skim, or Whole)"
+  = f.select :milk, options_for_select(["Select One",'2% Milk', 'Skim Milk', 'Whole Milk'] ), {}, { class: 'form-control form-control' }
+  = "Milkshakes $6"
+  = f.select :price, options_for_select(['6'] ), {}, { class: 'form-control form-control' }
+  = "Select Ice Cream Flavor"
+  %br
+  - @flavors.all.each do |flavor|
+    = radio_button_tag 'milkshake[flavor_ids][]', flavor.id, @milkshake.flavors.include?(flavor) 
+    %p3= flavor.name
+    %br
+  = "Discount Present?"
+  %br
+  = f.label "Yes"
+  = f.radio_button :discount, "Yes"
+  = f.label "No"
+  = f.radio_button :discount, "No"
+  = f.submit "Purchase", class: 'btn btn-success btn-block'

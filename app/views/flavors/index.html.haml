@@ -1,0 +1,7 @@
+%h1 Flavors Index
+- @flavors.each do |flavor|
+  = link_to "#{flavor.name}", flavor_path(flavor)
+  = link_to "Edit", edit_flavor_path(flavor), class: 'btn btn-xs btn-warning'
+  = link_to "Delete", flavor_path(flavor), method: :delete, class: 'btn btn-xs btn-danger'
+  %br
+= link_to "Home", root_path, class: 'btn btn-success btn-lg btn-block'
