@@ -1,9 +1,8 @@
 class IceCreamsController < ApplicationController
   before_action :find_icecream, only: [:show, :edit, :update, :destroy] 
-  before_action :find_flavor, only: [:index, :new, :edit]  
+  before_action :find_flavor, only: [:index, :new, :edit, :show]  
   def index
     @ice_cream = IceCream.all
-    @ice_cream_flavors = IceCreamFlavor.all
     @flavors = Flavor.all
   end
 
@@ -12,7 +11,6 @@ class IceCreamsController < ApplicationController
 
   def new
     @ice_cream = IceCream.new
-    @ice_cream_flavor = IceCreamFlavor.all
   end
 
   def create

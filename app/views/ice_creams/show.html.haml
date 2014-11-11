@@ -1,6 +1,13 @@
 %h1 Ice Cream Order
+= "Order Name:"
 = @ice_cream.order_name
+%br
+= "Vessel:"
 = @ice_cream.vessel
+%br
+="Price:"
 = @ice_cream.price
-/ = @ice_cream.name
+%br
+= "Ice Cream Flavor:"
+= @ice_cream.flavors.name
 = link_to "Home", root_path, class: 'btn btn-success btn-lg btn-block'

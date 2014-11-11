@@ -3,7 +3,6 @@ class MilkshakesController < ApplicationController
   before_action :find_flavor, only: [:index, :new, :edit]  
   def index
     @milkshakes = Milkshake.all
-    @ice_cream_flavors = IceCreamFlavor.all
   end
 
   def show
@@ -11,7 +10,6 @@ class MilkshakesController < ApplicationController
 
   def new
     @milkshake = Milkshake.new
-    @ice_cream_flavor = IceCreamFlavor.all
   end
 
   def create

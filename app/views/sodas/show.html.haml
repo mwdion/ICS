@@ -1,4 +1,13 @@
 %h1 Float Order
+= "Order Name:"
 = @soda.order_name
+%br
+= "Price:"
 = @soda.price
+%br
+= "Float Flavor:"
+= @soda.float_flavor
+%br
+= "Ice Cream Flavor:"
+= @soda.flavors.name
 = link_to "Home", root_path, class: 'btn btn-success btn-lg btn-block'

@@ -1,5 +1,14 @@
 %h1 Milkshakes Order
+%br
+= "Order Name:"
 = @milkshake.order_name
+%br
+= "Milk Preference:"
 = @milkshake.milk
+%br
+= "Price:"
 = @milkshake.price
+%br
+= "Ice Cream Flavor:"
+= @milkshake.flavors.name
 = link_to "Home", root_path, class: 'btn btn-success btn-lg btn-block'
